@@ -47,7 +47,7 @@ TO JEST OPROGRAMOWANIE ALPHA. MA TROCHÊ PROBLEMÓW.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make}
 
 # tests seem not to work - for unknown reason
