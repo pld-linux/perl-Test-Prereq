@@ -9,10 +9,12 @@ Summary:	Test::Prereq Perl module - check if Makefile.PL has the right pre-requi
 Summary(pl):	Modu³ Perla Test::Prereq - sprawdzanie, czy spe³nione s± zale¿no¶ci podane w Makefile.PL
 Name:		perl-Test-Prereq
 Version:	0.19
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	ce3fba34ac610400de95c37e82796aa6
+Patch0:		%{name}_typo.patch
 BuildRequires:	perl >= 5.6
 %if %{!?_with_tests:0}%{?_with_tests:1}
 BuildRequires:	perl-File-Find-Rule
@@ -43,8 +45,23 @@ z tymi podanymi w sekcji PREREQ_PM w Makefile.PL.
 
 TO JEST OPROGRAMOWANIE ALPHA. MA TROCHÊ PROBLEMÓW.
 
+%package Build
+Summary:	Test::Prereq::Build Perl module - test prerequisites in Module::Build scripts
+Summary(pl):	Modu³ Perla Test::Prereq::Build - wstêpne sprawdzanie w skryptach Module::Build
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}-%{release}
+
+%description Build
+Test::Prereq::Build Perl module overrides methods in Test::Prereq to
+make it work with Module::Build.
+
+%description Build -l pl
+Modu³ Perla Test::Prereq::Build przes³ania metody Test::Prereq, aby
+umo¿liwiæ jego wspó³pracê z Module::Build.
+
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL
@@ -65,6 +82,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes
 %{perl_sitelib}/Test/*.pm
+%{_mandir}/man3/*Prereq.3*
+
+%files Build
+%defattr(644,root,root,755)
 %dir %{perl_sitelib}/Test/Prereq
 %{perl_sitelib}/Test/Prereq/*.pm
-%{_mandir}/man3/*
+%{_mandir}/man3/*Build.3*
