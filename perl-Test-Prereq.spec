@@ -9,7 +9,7 @@ Summary:	Test::Prereq Perl module - check if Makefile.PL has the right pre-requi
 Summary(pl):	Modu³ Perla Test::Prereq - sprawdzanie, czy spe³nione s± zale¿no¶ci podane w Makefile.PL
 Name:		perl-Test-Prereq
 Version:	0.07
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -35,7 +35,12 @@ Makefile.PL.
 THIS IS ALPHA SOFTWARE. IT HAS SOME PROBLEMS.
 
 %description -l pl
-# TODO
+Funkcja prereq_ok() sprawdza modu³y, które znajdzie w blib/lib/ oraz
+pliki testów, które znajdzie w t/. Okre¶la, których modu³ów u¿ywaj±,
+pomija modu³y nale¿±ce do podstawowego Perla i porównuje listê modu³ów
+z tymi podanymi w sekcji PREREQ_PM w Makefile.PL.
+
+TO JEST OPROGRAMOWANIE ALPHA. MA TROCHÊ PROBLEMÓW.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
