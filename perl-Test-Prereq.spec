@@ -8,7 +8,7 @@
 Summary:	Test::Prereq Perl module - check if Makefile.PL has the right pre-requisites
 Summary(pl):	Modu³ Perla Test::Prereq - sprawdzanie, czy spe³nione s± zale¿no¶ci podane w Makefile.PL
 Name:		perl-Test-Prereq
-Version:	0.15
+Version:	0.18
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
@@ -57,8 +57,6 @@ perl Makefile.PL
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-mv -f $RPM_BUILD_ROOT%{_mandir}/man3/Prereq.3pm $RPM_BUILD_ROOT%{_mandir}/man3/Test::Prereq.3pm
-mv -f $RPM_BUILD_ROOT%{_mandir}/man3/Build.3pm $RPM_BUILD_ROOT%{_mandir}/man3/Test::Prereq::Build.3pm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
