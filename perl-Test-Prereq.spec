@@ -10,7 +10,8 @@ Summary(pl):	Modu³ Perla Test::Prereq - sprawdzanie, czy spe³nione s± zale¿no¶ci
 Name:		perl-Test-Prereq
 Version:	0.23
 Release:	1
-License:	GPL/Artistic
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	3606e94d34bdc78004c1b464a557a88f
@@ -57,7 +58,8 @@ TO JEST OPROGRAMOWANIE ALPHA. MA TROCHÊ PROBLEMÓW.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
