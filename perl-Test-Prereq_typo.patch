@@ -1,0 +1,11 @@
+--- Test-Prereq-0.19/lib/Build.pm~	Mon Jun 23 23:43:01 2003
++++ Test-Prereq-0.19/lib/Build.pm	Mon Jun 23 23:43:01 2003
+@@ -7,7 +7,7 @@
+ 
+ =head1 NAME
+ 
+-Test::Prereq::ModuleBuild - test prerequisites in Module::Bulid scripts
++Test::Prereq::ModuleBuild - test prerequisites in Module::Build scripts
+ 
+ =head1 SYNOPSIS
+ 
