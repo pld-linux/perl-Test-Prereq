@@ -8,12 +8,12 @@
 Summary:	Test::Prereq Perl module - check if Makefile.PL has the right pre-requisites
 Summary(pl):	Modu³ Perla Test::Prereq - sprawdzanie, czy spe³nione s± zale¿no¶ci podane w Makefile.PL
 Name:		perl-Test-Prereq
-Version:	0.19
-Release:	2
+Version:	0.23
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	ce3fba34ac610400de95c37e82796aa6
+# Source0-md5:	3606e94d34bdc78004c1b464a557a88f
 BuildRequires:	perl-devel >= 5.6
 %if %{!?_with_tests:0}%{?_with_tests:1}
 BuildRequires:	perl-File-Find-Rule
