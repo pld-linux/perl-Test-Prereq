@@ -49,7 +49,7 @@ TO JEST OPROGRAMOWANIE ALPHA. MA TROCHÊ PROBLEMÓW.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make}
 
 # tests seem not to work - for unknown reason
