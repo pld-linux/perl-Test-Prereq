@@ -8,8 +8,8 @@
 Summary:	Test::Prereq Perl module - check if Makefile.PL has the right pre-requisites
 Summary(pl):	Modu³ Perla Test::Prereq - sprawdzanie, czy spe³nione s± zale¿no¶ci podane w Makefile.PL
 Name:		perl-Test-Prereq
-Version:	0.07
-Release:	2
+Version:	0.15
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -17,6 +17,7 @@ BuildRequires:	perl >= 5.6
 %if %{!?_with_tests:0}%{?_with_tests:1}
 BuildRequires:	perl-File-Find-Rule
 BuildRequires:	perl-Module-CoreList
+BuildRequires:	perl-Test-Manifest >= 0.9
 BuildRequires:	perl-Test-Pod
 BuildRequires:	perl-Test-Simple
 BuildRequires:	perl(Test::Builder::Tester)
@@ -57,6 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 mv -f $RPM_BUILD_ROOT%{_mandir}/man3/Prereq.3pm $RPM_BUILD_ROOT%{_mandir}/man3/Test::Prereq.3pm
+mv -f $RPM_BUILD_ROOT%{_mandir}/man3/Build.3pm $RPM_BUILD_ROOT%{_mandir}/man3/Test::Prereq::Build.3pm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -65,4 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes
 %{perl_sitelib}/Test/*.pm
+%dir %{perl_sitelib}/Test/Prereq
+%{perl_sitelib}/Test/Prereq/*.pm
 %{_mandir}/man3/*
