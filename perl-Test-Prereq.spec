@@ -9,7 +9,7 @@ Summary:	Test::Prereq Perl module - check if Makefile.PL has the right pre-requi
 Summary(pl):	Modu³ Perla Test::Prereq - sprawdzanie, czy spe³nione s± zale¿no¶ci podane w Makefile.PL
 Name:		perl-Test-Prereq
 Version:	0.19
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -22,7 +22,7 @@ BuildRequires:	perl-Test-Pod
 BuildRequires:	perl-Test-Simple
 BuildRequires:	perl(Test::Builder::Tester)
 %endif
-BuildRequires:	rpm-perlprov >= 3.0.3-26
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +47,8 @@ TO JEST OPROGRAMOWANIE ALPHA. MA TROCHÊ PROBLEMÓW.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 
 # tests seem not to work - for unknown reason
@@ -64,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes
-%{perl_sitelib}/Test/*.pm
-%dir %{perl_sitelib}/Test/Prereq
-%{perl_sitelib}/Test/Prereq/*.pm
+%{perl_vendorlib}/Test/*.pm
+%dir %{perl_vendorlib}/Test/Prereq
+%{perl_vendorlib}/Test/Prereq/*.pm
 %{_mandir}/man3/*
