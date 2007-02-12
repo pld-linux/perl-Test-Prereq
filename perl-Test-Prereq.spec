@@ -6,7 +6,7 @@
 %define		pdir	Test
 %define		pnam	Prereq
 Summary:	Test::Prereq Perl module - check if Makefile.PL has the right pre-requisites
-Summary(pl):	Modu≥ Perla Test::Prereq - sprawdzanie, czy spe≥nione s± zaleøno∂ci podane w Makefile.PL
+Summary(pl.UTF-8):   Modu≈Ç Perla Test::Prereq - sprawdzanie, czy spe≈Çnione sƒÖ zale≈ºno≈õci podane w Makefile.PL
 Name:		perl-Test-Prereq
 Version:	1.031
 Release:	1
@@ -37,13 +37,13 @@ Makefile.PL.
 
 THIS IS ALPHA SOFTWARE. IT HAS SOME PROBLEMS.
 
-%description -l pl
-Funkcja prereq_ok() sprawdza modu≥y, ktÛre znajdzie w blib/lib/ oraz
-pliki testÛw, ktÛre znajdzie w t/. Okre∂la, ktÛrych modu≥Ûw uøywaj±,
-pomija modu≥y naleø±ce do podstawowego Perla i porÛwnuje listÍ modu≥Ûw
+%description -l pl.UTF-8
+Funkcja prereq_ok() sprawdza modu≈Çy, kt√≥re znajdzie w blib/lib/ oraz
+pliki test√≥w, kt√≥re znajdzie w t/. Okre≈õla, kt√≥rych modu≈Ç√≥w u≈ºywajƒÖ,
+pomija modu≈Çy nale≈ºƒÖce do podstawowego Perla i por√≥wnuje listƒô modu≈Ç√≥w
 z tymi podanymi w sekcji PREREQ_PM w Makefile.PL.
 
-TO JEST OPROGRAMOWANIE ALPHA. MA TROCH  PROBLEM”W.
+TO JEST OPROGRAMOWANIE ALPHA. MA TROCHƒò PROBLEM√ìW.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
