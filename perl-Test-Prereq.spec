@@ -6,7 +6,7 @@
 %define		pdir	Test
 %define		pnam	Prereq
 Summary:	Test::Prereq Perl module - check if Makefile.PL has the right pre-requisites
-Summary(pl.UTF-8):   Moduł Perla Test::Prereq - sprawdzanie, czy spełnione są zależności podane w Makefile.PL
+Summary(pl.UTF-8):	Moduł Perla Test::Prereq - sprawdzanie, czy spełnione są zależności podane w Makefile.PL
 Name:		perl-Test-Prereq
 Version:	1.031
 Release:	1
