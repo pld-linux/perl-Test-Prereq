@@ -26,6 +26,7 @@ BuildRequires:	perl-Test-Simple
 BuildRequires:	perl(Test::Builder::Tester)
 %endif
 BuildRequires:	rpm-perlprov >= 4.1-13
+Obsoletes:	perl-Test-Prereq-Build
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
