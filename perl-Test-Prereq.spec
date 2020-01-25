@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test" (seem not to work - for unknown reason)
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Test
 %define		pnam	Prereq
 Summary:	Test::Prereq Perl module - check if Makefile.PL has the right pre-requisites
